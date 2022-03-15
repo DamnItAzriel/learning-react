@@ -46,15 +46,34 @@ import './index.css'
 // Nested Tools
 
 //Setup vars
-const author = 'Hector Garcia';
-const img = 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg';
-
-
+// const author = 'Hector Garcia';
+// const img = 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg';
+// const img2 = 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg'; 
+//setup book 1
+const firstBook = {
+  img: 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg',
+  title: 'Ikigai: The Japanese Secret To Long and Happy Life',
+  author: 'Hector Garcia'
+}
+const secondBook= {
+  img:'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg',
+  title: 'The Psychology Of Money',
+  author: ' Morgan Housel'
+}
 function BookList(){
   return (
     <section className="bookList">
-     <Book/>
-     <Book/>
+      {/* Providing props here*/}
+     <Book
+      img={firstBook.img}
+      title={firstBook.title}
+      author={firstBook.author}
+     />
+     <Book
+      img={secondBook.img}
+      title={secondBook.title}
+      author={secondBook.author}
+     />
      {/* <Book/>
      <Book/>
      <Book/>
@@ -71,18 +90,23 @@ function BookList(){
     // </div>
   );
 }
-const Book = () => {
-  const title = 'Ikigai: The Japanese Secret To Long and Happy Life';
+// Trying properties - > props
+const Book = (props) => {
+  console.log(props);
+  // const title = 'Ikigai: The Japanese Secret To Long and Happy Life';
   // const author = 'Hector Garcia';
   return <article className= 'book'>
     {/* <Image></Image>
     <Title/>
     <Author/> */}
-    <img src={img} alt="" width="350px"/>
+    <img src={props.img} alt="" width="350px"/>
     {/* <h1>Ikigai: The Japanese Secret To Long and Happy Life</h1> */}
-    <h1>{title}</h1>
+    <h1>{props.title}</h1>
     {/* <h4>Hector Garcia</h4> */}
-    <h4>{author}</h4> 
+    <h4>{props.author}</h4> 
+    {/* <p>{props.job}</p>
+    <p>{props.title}</p>
+    <p>{props.price}</p> */}
     </article>;
 };
 // const Image = () => ;
