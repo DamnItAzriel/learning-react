@@ -17,31 +17,33 @@ import './index.css'
 // const img = 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg';
 // const img2 = 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg'; 
 //setup book 1
-const firstBook = {
+const books=[
+{
   img: 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg',
   title: 'Ikigai: The Japanese Secret To Long and Happy Life',
   author: 'Hector Garcia'
-}
-const secondBook= {
+},
+{
   img:'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg',
   title: 'The Psychology Of Money',
   author: ' Morgan Housel'
 }
+];
 function BookList(){
   return (
     <section className="bookList">
       {/* Providing props here*/}
      <Book
-      img={firstBook.img}
-      title={firstBook.title}
-      author={firstBook.author}
+      img={books[0].img}
+      title={books[0].title}
+      author={books[0].author}
      >
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam, accusamus iusto deleniti libero voluptatibus voluptates tempora! Obcaecati, rem saepe.</p>
+     {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam, accusamus iusto deleniti libero voluptatibus voluptates tempora! Obcaecati, rem saepe.</p> */}
      </Book>
      <Book
-      img={secondBook.img}
-      title={secondBook.title}
-      author={secondBook.author}
+      img={books[1].img}
+      title={books[1].title}
+      author={books[1].author}
      />
     </section>
   );
@@ -67,7 +69,7 @@ const Book = (props) => {
     {/* <p>{props.job}</p>
     <p>{props.title}</p>
     <p>{props.price}</p> */}
-    {props.children}
+    {/* {props.children} */}
     </article>;
 };
 // const Image = () => ;
