@@ -43,7 +43,7 @@ function BookList(){
      {books.map((book) =>{
        // structuring 
       return (
-        <Book key={book.id} book={book}>
+        <Book key={book.id} {...book}>
         </Book>
       )
        
@@ -58,9 +58,10 @@ function BookList(){
 // console.log(newName);
 
 
-const Book = (props) => {
-  console.log(props.book)
-  const { img, title, author} = props.book;
+const Book = ({ img, title, author}) => {
+  // console.log(props)
+  // const { img, title, author} = props;
+  // console.log({ img, title, author})
   return <article className= 'book'>
       <img src={img} alt="" width="350px"/>
       <h1>{title}</h1>
