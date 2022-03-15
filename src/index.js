@@ -51,6 +51,14 @@ function BookList(){
 // Trying properties - > props
 
 // const Book = (props) => {
+
+const names = ['john', 'peter', 'susan'];
+const newName = names.map((name) => {
+  console.log(name);
+});
+console.log(newName);
+
+
 const Book = (props) => {
   // console.log(props);
   //Object destructuring 
