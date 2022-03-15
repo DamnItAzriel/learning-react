@@ -10,39 +10,6 @@ import './index.css'
 // Stateless Function Component or Dumb Components
 // Returns JSX
 
-
-// function Greeting() {
-//   // return <h4>I am Pankaj and this is my first component</h4>;
-//   return (
-//     <div>
-//       <div>
-//         <h1>
-//           Hello World
-//         </h1>
-//       </div>
-//       <div>
-//         <h2>
-//           Bye!
-//         </h2>
-//       </div>
-//     </div>
-
-//   );
-// }
-
-
-// const Greeting = () => {
-//   return React.createElement('h1', {}, "Hello World"); 
-// }
-
-// const Greeting = () => {
-//   return React.createElement(
-//     'div',
-//     {},
-//     React.createElement('h1', {}, "Hello WOrld")
-//   )
-// }
-
 // Nested Tools
 
 //Setup vars
@@ -68,45 +35,39 @@ function BookList(){
       img={firstBook.img}
       title={firstBook.title}
       author={firstBook.author}
-     />
+     >
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam, accusamus iusto deleniti libero voluptatibus voluptates tempora! Obcaecati, rem saepe.</p>
+     </Book>
      <Book
       img={secondBook.img}
       title={secondBook.title}
       author={secondBook.author}
      />
-     {/* <Book/>
-     <Book/>
-     <Book/>
-     <Book/>
-     <Book/> */}
     </section>
-    // <div>
-    //   {/* <h1>Pankaj Pawar</h1> */}
-    //   <Person/>
-    //   {/* <p>
-    //     God, Freedom, Truth
-    //   </p> */}
-    //   <Quote/>
-    // </div>
   );
 }
 // Trying properties - > props
+
+// const Book = (props) => {
 const Book = (props) => {
-  console.log(props);
-  // const title = 'Ikigai: The Japanese Secret To Long and Happy Life';
-  // const author = 'Hector Garcia';
+  // console.log(props);
+  //Object destructuring 
+  // instead of props you could just destructure object in props place itself in function parenthesis
+  const { img, title, author} = props;
   return <article className= 'book'>
-    {/* <Image></Image>
-    <Title/>
-    <Author/> */}
-    <img src={props.img} alt="" width="350px"/>
+    {/* <img src={props.img} alt="" width="350px"/> */}
+    <img src={img} alt="" width="350px"/>
     {/* <h1>Ikigai: The Japanese Secret To Long and Happy Life</h1> */}
-    <h1>{props.title}</h1>
+    {/* <h1>{props.title}</h1> */}
+    <h1>{title}</h1>
     {/* <h4>Hector Garcia</h4> */}
-    <h4>{props.author}</h4> 
+
+    {/* <h4>{props.author}</h4>  */}
+    <h4>{author}</h4>
     {/* <p>{props.job}</p>
     <p>{props.title}</p>
     <p>{props.price}</p> */}
+    {props.children}
     </article>;
 };
 // const Image = () => ;
