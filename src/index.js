@@ -7,7 +7,6 @@ import './index.css'
 //js
 import {books} from './books';
 import Book from './Book';
-import greeting from './testing/testing';
 function BookList(){
   return (
     <section className="bookList">
